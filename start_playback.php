@@ -1,3 +1,5 @@
 <?php
-	passthru('start_playback.sh');
+    $fifo = fopen("/tmp/cmd", 'w'); 
+
+    fwrite($fifo, "."); 
 ?>
