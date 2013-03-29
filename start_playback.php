@@ -1,3 +1,3 @@
 <?php
-	passthru('echo . > /tmp/cmd');
+	passthru('echo -n q > /tmp/cmd');
 ?>
