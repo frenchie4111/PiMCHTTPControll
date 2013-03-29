@@ -1,5 +1,3 @@
 <?php
-    $fifo = fopen("cmd", 'w'); 
-
-    fwrite($fifo, "p"); 
+    passthru("echo -n > cmd");
 ?>
