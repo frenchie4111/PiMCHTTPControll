@@ -1,10 +1,14 @@
-<?php
-echo derp;
-passthru('omxplayer "http://frenchie:michael9@bluefile.org:9090/Sweet%20Thing%20(CD%20-%20MP3%20-%20V0)/01%20-%20Sweet%20Thing%20-%20Change%20of%20Seasons.mp3" < /tmp/cmd');
-passthru('sudo echo . > /tmp/cmd');
-?>
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
 
-<form action="index.php" method="get">
-<input type="text" style="width:300px;" name="url" />
-<input type="submit" value="Go" />
-</form>
+	<body>
+		<form action="index.php" method="get">
+		<input type="text" style="width:300px;" name="url" />
+		<input type="submit" value="Go" />
+		</form>
+		<br/>
+		<input type="submit" value="Start Server" id="startServer" />
+	</body>
+</html>
