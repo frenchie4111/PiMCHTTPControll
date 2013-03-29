@@ -7,6 +7,8 @@
 				$("#start_server").click(function() {
 					$.ajax({
 						url:"start_server.php"
+					}).done(function(data) {
+						alert("Done!");
 					});
 				});
 			});
