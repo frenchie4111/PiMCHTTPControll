@@ -1,5 +1,5 @@
 <?php
-    $fifo = fopen("/tmp/cmd", 'w'); 
+    $fifo = fopen("cmd", 'w'); 
 
     fwrite($fifo, "p"); 
 ?>
