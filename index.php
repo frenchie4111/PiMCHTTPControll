@@ -4,7 +4,7 @@
 
 		<script>
 			$(document).ready(function() {
-				$("submit").click(function() {
+				$("input[type='submit']").click(function() {
 					$temp = ($(this).attr("id")+".php");
 					alert($temp)
 					$.ajax({
