@@ -1,3 +1,3 @@
 <?php
-	passthru('echo -n q > /tmp/cmd');
+	passthru('start_playback.sh');
 ?>
