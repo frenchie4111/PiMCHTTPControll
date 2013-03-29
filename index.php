@@ -5,8 +5,10 @@
 		<script>
 			$(document).ready(function() {
 				$("submit").click(function() {
+					$temp = ($(this).attr("id")+".php");
+					alert($temp)
 					$.ajax({
-						url:($(this).attr("id")+(".php"))
+						url:$temp
 					}).done(function(data) {
 						alert(data);
 					});
