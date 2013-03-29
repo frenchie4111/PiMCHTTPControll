@@ -1,3 +1,3 @@
 <?php
-    passthru("echo -n > /home/pi/public_html/cmd");
+    passthru("echo . > /home/pi/public_html/cmd");
 ?>
