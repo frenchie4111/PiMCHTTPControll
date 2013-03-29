@@ -4,9 +4,9 @@
 
 		<script>
 			$(document).ready(function() {
-				$("#start_server").click(function() {
+				$("submit").click(function() {
 					$.ajax({
-						url:"start_server.php"
+						url:($(this).attr("id")+(".php"))
 					}).done(function(data) {
 						alert(data);
 					});

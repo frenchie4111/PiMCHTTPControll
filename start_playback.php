@@ -1,3 +1,3 @@
 <?php
-passthru('sudo echo . > /tmp/cmd');
+	passthru('sudo echo . > /tmp/cmd');
 ?>
