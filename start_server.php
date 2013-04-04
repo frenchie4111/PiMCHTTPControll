@@ -1,3 +1,9 @@
 <?php
-	passthru('omxplayer --adev local "http://mikelyons.org/external/01%20-%20Sweet%20Thing%20-%20Change%20of%20Seasons.mp3" < /tmp/cmd');
+	echo "COMMAND: Start Server";
+	$file = "http://mikelyons.org/external/cos.mp3";
+	if( isset( $_GET['url']  ) )
+	{
+		$file = $_GET['url'];
+	}
+	echo shell_exec("omxplayer -o hdmi " . str_replace(" ", "%20", $file) . " < " . getcwd() . "/player/cmd");
 ?>
