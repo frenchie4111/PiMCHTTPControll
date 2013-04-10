@@ -1,27 +1,60 @@
 <html>
-<body>
-<form action="index.php" method="post">
-<textarea rows="50" cols="50" name="note">
-<?php
-if (isset($_POST["note"]))
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+
+function updateList()
 {
-	$writeFile = fopen("dat.txt","w");
-	$newStat = $_POST["note"];
-	fwrite($writeFile,$newStat);
-	fclose($writeFile);
+$("#list").text("");
+$.post("dat.txt", function(data) {
+	var lines = data.split('\n');
+	for(var i = 0; i < lines.length; i++)
+	{
+		if(lines[i] != "")
+		{
+			$("#list").append(function() {
+				return lines[i] + "<br/>";
+			});
+		}
+	}
+});
+}
+function addButtons()
+{
+
 }
 
+$(document).ready(function() {
+$("#go").click(function() {
+	$.post("add.php", {url:$("#url").val()+"\n"}, function(data) {
+		updateList();
+	});
+});
+});
+
+</script>
+</head>
+
+<body>
+<form action="index.php" method="post">
+<input type="text" id="url" style="width:400px;" /><input type="button" id="go" value="Add" />
+</form>
+
+<div id="list">
+<?php
 $file = fopen("dat.txt","r");
 while(!feof($file))
   {
-  echo fgets($file);
+	$line = fgets($file);
+	if($line != "" && $line != " " && $line != "\n")
+	{
+	  echo "<a id=''>" . $line . "</a><br/>";
+	}
   }
 fclose($file);
 ?>
-</textarea>
+</div>
 <br /> 
-<input type="submit" value="Save" />
-</form>
 </body>
 </html>
 

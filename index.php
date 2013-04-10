@@ -69,7 +69,7 @@
 								printed_lines++;
 								console.log("line" + printed_lines);
 								$("#console").append(function() {
-									return $("<a id='line' href='#' >" + lines[i] + " </a>").click(function(){
+									return $("<a id='line' href='#' >" + lines[i] + " </a><br/>").click(function(){
 										$("#url").val(($(this).text()));
 									});
 								});
